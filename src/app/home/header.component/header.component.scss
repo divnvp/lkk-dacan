@@ -1,0 +1,31 @@
+.header-component {
+  position: fixed;
+
+  height: 5rem;
+
+  left: 0;
+  right: 0;
+  top: 0;
+
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 8px rgb(0 0 0 / 91%);
+
+  z-index: 999;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100%;
+  }
+
+  &__text {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: bisque;
+    }
+  }
+}
