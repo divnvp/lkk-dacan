@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainPageComponent } from "./components/main.page/main.page.component";
+import { MainPage } from "./components/main.page/main.page";
 import { RouterModule } from "@angular/router";
 import { HomeRoutingModule } from "./home-routing.module";
 import { HeaderComponent } from './components/header.component/header.component';
+import { FooterComponent } from './components/footer.component/footer.component';
 
 @NgModule({
   declarations: [
-    MainPageComponent,
-    HeaderComponent
+    MainPage,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
