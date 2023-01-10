@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { of } from "rxjs";
 import { TUI_LANGUAGE, TUI_RUSSIAN_LANGUAGE } from "@taiga-ui/i18n";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,8 +19,9 @@ import { TUI_LANGUAGE, TUI_RUSSIAN_LANGUAGE } from "@taiga-ui/i18n";
     BrowserAnimationsModule,
     TuiRootModule,
     TuiDialogModule,
-    TuiAlertModule
-],
+    TuiAlertModule,
+    HttpClientModule
+  ],
   providers: [
     {
       provide: LOCALE_ID,

@@ -1,0 +1,12 @@
+<ng-container>
+  <div *ngIf="(posts$ | async)?.length; else noRows">
+    <div *ngFor="let post of (posts$ | async)" class="tui-col_12">
+      <span class="tui-col_2">{{ post.id }}</span>
+      <span class="tui-col_4">{{ post.title }}</span>
+    </div>
+  </div>
+
+  <ng-template #noRows>
+    <span>Отсутствуют записи</span>
+  </ng-template>
+</ng-container>
