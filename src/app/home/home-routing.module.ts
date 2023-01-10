@@ -6,6 +6,12 @@ const routes: Routes = [
   {
     path: '',
     component: MainPage,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('../post/post.module').then(m => m.PostModule)
+      }
+    ]
   }
 ]
 
@@ -13,4 +19,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {
+}
