@@ -18,7 +18,7 @@ export class Store {
     return this.posts;
   }
 
-  setUsers(users: User[]) {
+  setUsers(users: User[]): void {
     this.users.next(users);
   }
 

@@ -4,9 +4,17 @@
       <div class="tui-island__title">
         {{ post.title }}
       </div>
-      <p class="tui-island__paragraph">
+      <p class="tui-island__paragraph tui-space_vertical-5">
         {{ post.body }}
       </p>
+      <div *ngIf="user" class="tui-row">
+        <figure class="tui-col_12 tui-island__figure tui-row_align_center">
+          <div class="some-figure tui-space_right-2"></div>
+          <figcaption>
+            {{ user.name }}
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </tui-island>
 </ng-container>

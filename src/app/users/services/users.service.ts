@@ -2,7 +2,11 @@ import { HttpClient } from "@angular/common/http";
 import { User } from "../models/user";
 import { map } from "rxjs";
 import { Store } from "../../store/global-state";
+import { Injectable } from "@angular/core";
 
+@Injectable({
+  providedIn: 'root'
+})
 export class UsersService {
   constructor(
     private http: HttpClient,
