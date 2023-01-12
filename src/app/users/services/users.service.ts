@@ -22,4 +22,12 @@ export class UsersService {
         })
       ).subscribe();
   }
+
+  fetchUser(userId: number): void {
+    this.http.get<User>(`https://jsonplaceholder.typicode.com/users/${userId}`)
+      .pipe(map(response => {
+        this.store.setUser(response);
+      }))
+      .subscribe();
+  }
 }

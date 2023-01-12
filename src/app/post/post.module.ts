@@ -4,7 +4,8 @@ import { PostsService } from "./services/posts.service";
 import { PostComponent } from "./components/post.component/post.component";
 import { PostRoutingModule } from "./post-routing.module";
 import { CardComponent } from './components/card.component/card.component';
-import {TuiIslandModule} from "@taiga-ui/kit";
+import { TuiIslandModule } from "@taiga-ui/kit";
+import {TuiButtonModule} from "@taiga-ui/core";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {TuiIslandModule} from "@taiga-ui/kit";
   imports: [
     CommonModule,
     PostRoutingModule,
-    TuiIslandModule
+    TuiIslandModule,
+    TuiButtonModule
   ],
   providers: [
     PostsService

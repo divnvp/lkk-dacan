@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
-import { PostComponent } from "./components/post.component/post.component";
+import { UserCardComponent } from "./components/user-card/user-card.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: PostComponent
+    component: UserCardComponent
+  },
+  {
+    path: ':id',
+    component: UserCardComponent
   }
 ]
 
@@ -13,5 +17,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PostRoutingModule {
+export class UsersRoutingModule {
 }
