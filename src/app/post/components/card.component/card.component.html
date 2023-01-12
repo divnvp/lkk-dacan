@@ -8,12 +8,20 @@
         {{ post.body }}
       </p>
       <div *ngIf="user" class="tui-row">
-        <figure class="tui-col_12 tui-island__figure tui-row_align_center">
-          <div class="some-figure tui-space_right-2"></div>
-          <figcaption>
-            {{ user.name }}
-          </figcaption>
-        </figure>
+        <div class="tui-col_12">
+          <a
+            tuiButton
+            appearance="flat"
+            [routerLink]="'/users/' + [user.id]"
+          >
+            <figure class="tui-col_12 tui-island__figure tui-row_align_center figure">
+              <div class="some-figure tui-space_right-2"></div>
+              <figcaption>
+                {{ user.name }}
+              </figcaption>
+            </figure>
+          </a>
+        </div>
       </div>
     </div>
   </tui-island>

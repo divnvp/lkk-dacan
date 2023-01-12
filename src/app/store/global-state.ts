@@ -9,6 +9,7 @@ import { User } from "../users/models/user";
 export class Store {
   private posts = new BehaviorSubject<Post[]>([]);
   private users = new BehaviorSubject<User[]>([]);
+  private user = new BehaviorSubject<User>({});
 
   setPosts(posts: Post[]): void {
     this.posts.next(posts);
@@ -24,5 +25,13 @@ export class Store {
 
   get users$(): Observable<User[]> {
     return this.users;
+  }
+
+  setUser(user: User): void {
+    this.user.next(user);
+  }
+
+  get user$(): Observable<User> {
+    return this.user;
   }
 }
