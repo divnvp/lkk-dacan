@@ -33,7 +33,7 @@ export class PostComponent implements OnInit{
     this.userService.fetchUsers();
   }
 
-  getUserById(users: User[] | null, userId: number): User | undefined {
+  getUserById(users: User[] | null, userId: number | undefined): User | undefined {
       return users?.find(user => user.id === userId);
   }
 }
