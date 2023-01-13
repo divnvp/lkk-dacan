@@ -1,5 +1,10 @@
 <ng-container class="tui-col_12">
-  <tui-island [hoverable]="true" textAlign="center" class="tui-space_vertical-5">
+  <tui-island
+    [hoverable]="true"
+    (click)="openDialog(postInfo)"
+    textAlign="center"
+    class="tui-space_top-5 tui-space_bottom-2"
+  >
     <div class="tui-island__content">
       <div class="tui-island__title">
         {{ post.title }}
@@ -7,22 +12,47 @@
       <p class="tui-island__paragraph tui-space_vertical-5">
         {{ post.body }}
       </p>
-      <div *ngIf="user" class="tui-row">
-        <div class="tui-col_12">
-          <a
-            tuiButton
-            appearance="flat"
-            [routerLink]="'/users/' + [user.id]"
-          >
-            <figure class="tui-col_12 tui-island__figure tui-row_align_center figure">
-              <div class="some-figure tui-space_right-2"></div>
-              <figcaption>
-                {{ user.name }}
-              </figcaption>
-            </figure>
-          </a>
-        </div>
-      </div>
     </div>
   </tui-island>
+
+  <div *ngIf="user" class="tui-row">
+    <div class="tui-col_12">
+      <a
+        tuiButton
+        appearance="flat"
+        size="xs"
+        [routerLink]="'/users/' + [user.id]"
+      >
+        <figure class="tui-col_12 tui-island__figure tui-row_align_center figure">
+          <div class="some-figure tui-space_right-2"></div>
+          <figcaption>
+            {{ user.name }}
+          </figcaption>
+        </figure>
+      </a>
+    </div>
+  </div>
 </ng-container>
+
+<ng-template #postInfo>
+  <div>
+    <div class="tui-text_h4">
+      {{ post.title }}
+    </div>
+    <div class="tui-text tui-space_top-3">
+      {{ post.body }}
+    </div>
+    <div *ngIf="(comments$ | async) as comments" class="border-top tui-space_vertical-2">
+      <div class="tui-text_h6">Comments:</div>
+      <div *ngFor="let comment of comments" class="tui-space_vertical-2">
+        <figure class="figure tui-row tui-row_align_center">
+          <div class="some-figure tui-space_right-2"></div>
+          <figcaption class="tui-island__paragraph">
+            {{ comment.email }}
+          </figcaption>
+        </figure>
+        <div>{{ comment.body }}</div>
+      </div>
+    </div>
+  </div>
+</ng-template>
